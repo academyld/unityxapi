@@ -1,79 +1,78 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
+using UnityEngine.UI;
 using TinCan;
 using TinCan.LRSResponses;
 
-public class statements : MonoBehaviour
-{
-    public string actorXName;
-    public string verbXName;
-    public string Xdescription;
-    public int Xvalue;
+public class XAPI : MonoBehaviour {
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        SendStatement(actorXName, verbXName, Xdescription, Xvalue);
-    }
+    public string _actor = "actor";
+    public string _verb = "verb";
+    public string _definition;
+    public int _value = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private RemoteLRS lrs;
 
-    public void SendStatement(string actorName, string verbName, string description, int value)
-    {
-        Debug.Log("Prepping statement");
-        var lrs = new RemoteLRS(
-        "lrs url",
-        "key",
-        "secret"
+	// Use this for initialization
+	void Start () {
+
+        lrs = new RemoteLRS(
+        "http://lrs.academyld.com/data/xAPI",
+        "9f8cc2ee02a95908658c7c3410e97cbff6767a6a",
+        "aeb6acae4003774005cddb86e853d3b4d294951c"
         );
 
+        _definition = gameObject.name;
+
+    }
+	
+	// Update is called once per frame
+	void Update () {
+		
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SendStatement();
+        }
+
+	}
+
+    public void SendStatement()
+    {
+        
         //Build out Actor details
-        var actor = new Agent();
-        actor.mbox = "mailto:" + actorName.Replace(" ", "") + "@noemail.com";
-        actor.name = actorName;
+        Agent actor = new Agent();
+        actor.mbox = "mailto:" + _actor.Replace(" ", "") + "@noemail.com";
+        actor.name = _actor;
 
         //Build out Verb details
-        var verb = new Verb();
-        verb.id = new Uri("http://www.example.com/" + verbName.Replace(" ", ""));
+        Verb verb = new Verb();
+        verb.id = new Uri("http://www.example.com/" + _verb.Replace(" ", ""));
         verb.display = new LanguageMap();
-        verb.display.Add("en-US", verbName);
+        verb.display.Add("en-US", _verb);
 
         //Build out Activity details
-        var activity = new Activity();
-        activity.id = new Uri("http://www.example.com/" + description.Replace(" ", "")).ToString();
+        Activity activity = new Activity();
+        activity.id = new Uri("http://www.example.com/" + _definition.Replace(" ", "")).ToString();
 
         //Build out Activity Definition details
-        var activityDefinition = new ActivityDefinition();
+        ActivityDefinition activityDefinition = new ActivityDefinition();
         activityDefinition.description = new LanguageMap();
         activityDefinition.name = new LanguageMap();
-        //activityDefinition.description.Add("en-US", resp);
-        activityDefinition.name.Add("en-US", (description));
+        activityDefinition.name.Add("en-US", (_definition));
         activity.definition = activityDefinition;
 
-        //Add Module info into "Statment.Context.Platform"
-        //var context = new Context();
-        //context.platform = module;
+        Result result = new Result();
+        Score score = new Score();
 
-        var result = new Result();
-        var score = new Score();
-
-        score.raw = value;
+        score.raw = _value;
         result.score = score;
-        //result.response = resp;
 
         //Build out full Statement details
-        var statement = new Statement();
+        Statement statement = new Statement();
         statement.actor = actor;
         statement.verb = verb;
         statement.target = activity;
         statement.result = result;
-        //statement.context = context;
 
         //Send the statement
         StatementLRSResponse lrsResponse = lrs.SaveStatement(statement);
@@ -86,7 +85,7 @@ public class statements : MonoBehaviour
             Debug.Log("Statement Failed: " + lrsResponse.errMsg);
         }
 
-
     }
+
 
 }
