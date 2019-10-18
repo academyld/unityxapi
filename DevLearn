@@ -15,8 +15,6 @@
         "SECRET"
         );
 
-        _definition = gameObject.name;
-
     }
 	
 	// Update is called once per frame
