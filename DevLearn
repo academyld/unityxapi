@@ -1,6 +1,6 @@
 
-    public string _actor = "actor";
-    public string _verb = "verb";
+    public string _actor;
+    public string _verb;
     public string _definition;
     public int _value = 0;
 
@@ -10,9 +10,9 @@
 	void Start () {
 
         lrs = new RemoteLRS(
-        "http://lrs.academyld.com/data/xAPI",
-        "9f8cc2ee02a95908658c7c3410e97cbff6767a6a",
-        "aeb6acae4003774005cddb86e853d3b4d294951c"
+        "ENDPOINT",
+        "KEY",
+        "SECRET"
         );
 
         _definition = gameObject.name;
