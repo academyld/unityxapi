@@ -18,15 +18,11 @@ https://github.com/RusticiSoftware/TinCan.NET/releases
 
 ##### Ports for AWS Security Group
 
-UDP 27017
-
-TCP 27017
-
-HTTP 80
-
-SSH 22
-
-HTTPS 443
+- UDP 27017
+- TCP 27017
+- HTTP 80
+- SSH 22
+- HTTPS 443
 
 ##### Download and Install PuTTY
 http://hcv.academy/putty
