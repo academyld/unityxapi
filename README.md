@@ -12,9 +12,11 @@ Rustici Software - TinCan.NET
 https://github.com/RusticiSoftware/TinCan.NET/releases
 (Download the TinCan-net45-signed.dll file)
 
-##### Setting up Learning Locker (LRS)
 
-Ports for AWS Security Group
+
+## Setting up Learning Locker (LRS)
+
+##### Ports for AWS Security Group
 
 UDP 27017
 
