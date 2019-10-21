@@ -33,8 +33,11 @@ http://hcv.academy/putty
 user: ubuntu
 
 Connecting using Windows: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html?icmpid=docs_ec2_console
+
 Connecting using MacOS: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html
 
 Script to read creadentials: 
 
 `sudo nano ll_credentials.txt`
+
+
