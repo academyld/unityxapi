@@ -1,5 +1,5 @@
 # unityxapi
-Sending xAPI statement from Unity to LRS
+## Sending xAPI statement from Unity to LRS
 
 This is a collection of resources to help get started sending xAPI statements with Unity applications.
 
