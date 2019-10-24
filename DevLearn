@@ -32,7 +32,7 @@
         
         //Build out Actor details
         Agent actor = new Agent();
-        actor.mbox = "mailto:" + _actor.Replace(" ", "") + "@noemail.com";
+        actor.mbox = "mailto:" + _actor.Replace(" ", "") + "@email.com";
         actor.name = _actor;
 
         //Build out Verb details
