@@ -35,5 +35,5 @@ Newtonsoft - Json.NET
 https://www.newtonsoft.com/json
 
 Rustici Software - TinCan.NET
-https://github.com/RusticiSoftware/TinCan.NET/releases
+https://rusticisoftware.github.io/TinCan.NET/
 (Download the TinCan-net45-signed.dll file)
