@@ -38,6 +38,7 @@ Rustici Software - TinCan.NET
 https://rusticisoftware.github.io/TinCan.NET/
 (Download the TinCan-net45-signed.dll file)
 
+## Demo Learning Locker LRS client info:
 
 http://54.165.8.214/data/xAPI
 
