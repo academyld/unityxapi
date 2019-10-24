@@ -37,3 +37,12 @@ https://www.newtonsoft.com/json
 Rustici Software - TinCan.NET
 https://rusticisoftware.github.io/TinCan.NET/
 (Download the TinCan-net45-signed.dll file)
+
+
+http://54.165.8.214/data/xAPI
+
+Key
+12781b6751bdc8667e5f6cacdb994d3632cbcc8e
+
+Secret
+bc6809c583c126f16ef60a2c9784cccdb38174a1
