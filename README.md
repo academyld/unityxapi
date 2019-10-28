@@ -1,5 +1,11 @@
 # unityxapi
 
+UPDATE: 10/28/19:
+Head over to youtube for a walkthrough tutorial on enabling xAPI statements in Unity. We'll be uploading an additional video on how to set up your LRS shortly. Thankfully, sending xAPI statments from Unity is LRS agnostic and will work no matter the LRS you use.
+
+https://youtu.be/zX8Pq9STvoo
+
+
 ## Setting up Learning Locker (LRS)
 
 ##### Ports for AWS Security Group
